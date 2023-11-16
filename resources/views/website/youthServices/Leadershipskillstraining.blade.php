@@ -14,5 +14,5 @@
 @endsection
 
 @section('content')
-
+    <h1>Leadership Skills & Training</h1>
 @stop

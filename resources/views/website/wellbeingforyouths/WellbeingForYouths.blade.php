@@ -14,5 +14,5 @@
 @endsection
 
 @section('content')
-
+    <h1>Well Being For Youth</h1>
 @stop

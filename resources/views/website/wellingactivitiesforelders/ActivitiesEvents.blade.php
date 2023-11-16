@@ -17,10 +17,10 @@
 <div class="form">
 <form method="POST" action="{{ route('event.submit') }}">
     <h3>Events Register</h3>
-    @csrf
+
     <table>
         <tr>
-            <td><label for="fname">Frist Name:</label></td>
+            <td><label for="fname">First Name:</label></td>
             <td><input type="text" id="fname" name="fname"></td>
         </tr>
         <tr>

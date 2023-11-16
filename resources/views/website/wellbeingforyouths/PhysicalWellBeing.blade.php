@@ -14,5 +14,5 @@
 @endsection
 
 @section('content')
-
+    <h1>Physical Well Being</h1>
 @stop

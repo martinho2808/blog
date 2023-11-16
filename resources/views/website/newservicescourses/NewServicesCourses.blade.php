@@ -15,5 +15,5 @@
 @endsection
 
 @section('content')
-
+    <h1>NewServices & Courses</h1>
 @stop

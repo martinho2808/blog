@@ -14,5 +14,5 @@
 @endsection
 
 @section('content')
-
+    <h1>Resources Support</h1>
 @stop

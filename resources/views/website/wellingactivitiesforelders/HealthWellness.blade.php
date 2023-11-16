@@ -14,5 +14,5 @@
 @endsection
 
 @section('content')
-
+    <h1>Health Wellness</h1>
 @stop

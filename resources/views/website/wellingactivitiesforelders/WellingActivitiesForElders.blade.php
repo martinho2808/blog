@@ -14,5 +14,5 @@
 @endsection
 
 @section('content')
-
+    <h1> Activities For Elders</h1>
 @stop

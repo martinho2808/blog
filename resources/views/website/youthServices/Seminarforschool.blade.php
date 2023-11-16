@@ -14,5 +14,5 @@
 @endsection
 
 @section('content')
-
+    <h1> Seminar For School</h1>
 @stop
