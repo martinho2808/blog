@@ -5,7 +5,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dbtable extends Model
 {
-    protected $selectedTable = 'events_register';
 
     public function getTable()
     {
@@ -16,4 +15,5 @@ class Dbtable extends Model
     {
         $this->selectedTable = $table;
     }
+    
 }

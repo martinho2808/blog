@@ -70,8 +70,6 @@ class DbController extends Controller
 
     private function getSelectedTableName($selectedTable)
     {
-        // 根据需要进行动态表格名称的映射
-        // 例如：
         switch ($selectedTable) {
             case 'DB1':
                 return 'events_register';

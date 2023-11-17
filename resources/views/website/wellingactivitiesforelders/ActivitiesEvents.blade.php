@@ -15,12 +15,12 @@
 
 @section('content')
 <div class="form">
-<form method="POST" action="{{ route('event.submit') }}">
+<form method="POST" action="{{ route('event_submit') }}">
     <h3>Events Register</h3>
-
+    @csrf
     <table>
         <tr>
-            <td><label for="fname">First Name:</label></td>
+            <td><label for="fname">Frist Name:</label></td>
             <td><input type="text" id="fname" name="fname"></td>
         </tr>
         <tr>
@@ -34,12 +34,12 @@
         <tr>
         <tr>
             <td><label for="event">Events:</label></td>
-            <td><select id="event" name="event">
+            <td><select id="event_id" name="event_id">
             <option value="">Please select the Events</option>
-            <option value="1">Event1</option>
-            <option value="2">Event2</option>
-            <option value="3">Event3</option>
-            <option value="4">Event4</option>
+            <option value="A01">Event1</option>
+            <option value="A02">Event2</option>
+            <option value="A03">Event3</option>
+            <option value="A04">Event4</option>
             </td>
     </select>
         </tr>

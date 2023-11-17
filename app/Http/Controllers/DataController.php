@@ -14,8 +14,8 @@ class DataController extends Controller
     function event_submit(Request $request)
     {
         $request->validate([
-            'fname' => 'required|max:10',
-            'lname' => 'required|max:10',
+            'fname' => 'required|max:10|regex:/^[a-zA-Z\s]+$/',
+            'lname' => 'required|max:10|regex:/^[a-zA-Z\s]+$/',
             'event_id' => 'required|in:A01,A02,A03,A04',
             'mobile' => 'required|regex:/^\d{8}$/',
             'email' => 'required|email',
