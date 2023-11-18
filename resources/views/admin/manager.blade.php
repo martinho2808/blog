@@ -25,10 +25,10 @@
         </select>
         <label>Soft</label>
         @if($noData)
-            <select name="asc" disabled="disabled">
+            <select name="order" disabled="disabled">
                 <option value="">Please select field name</option>
             @else
-                <select name="asc">
+                <select name="order">
                     <option value="">Please select field name</option>
                     @foreach ($tableData[0] as $columnName => $name)
                         <option value="{{ $columnName }}">{{ $columnName }}</option>

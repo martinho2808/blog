@@ -18,33 +18,39 @@ class DbController extends Controller
     {
         $selectedTable = request('db_table');
         $selectedTable_name =request('db_table');
-        $order = request('asc');
+        $order = request('order');
         $selectedTable = $this->getSelectedTableName($selectedTable);
         $session_tableselect = $selectedTable;
         $perPage = 5;
-
-        $tableData = DB::table($selectedTable);
+        $currentPage = request('page', 1);
+        $offset = ($currentPage - 1) * $perPage;
         
         if ($order === '' || $order === null) {
-            $tableData = $tableData->get();
-        } else {
-            $tableData = $tableData->orderBy('id', $order)->get();
+                    
+        $tableData = DB::table($selectedTable)
+        ->offset($offset)
+        ->limit($perPage)
+        ->get();
+        } else {       
+        $tableData = DB::table($selectedTable)
+        ->offset($offset)
+        ->limit($perPage)
+        ->orderBy($order)
+        ->get();
         }
         
-        $currentPage = request()->input('page', 1);
-        $offset = ($currentPage - 1) * $perPage;
         $pageItems = $tableData->slice($offset, $perPage);
         
         $page_show_data = new LengthAwarePaginator(
             $pageItems,
-            $tableData->count(),
+            DB::table($selectedTable)->count(),
             $perPage,
             $currentPage,
             [
                 'path' => url('admin/manager?db_table'),
                 'query' => [
                     'db_table' => $selectedTable_name,
-                    'asc' => $order
+                    'page' => $currentPage
                 ]
             ]
         );
