@@ -15,7 +15,7 @@
 
 @section('content')
 <div class="col-md-12 text-center animate-box">
-			<p><img src="images/aboutus.jpg" alt="Free HTML5 Bootstrap Template" width="800" height="450" class="center"></p>
+			<p><img src="{{URL::asset('image/aboutus.jpg')}}" alt="Free HTML5 Bootstrap Template" width="800" height="450" class="center"></p>
 		</div>
 		<div id="fh5co-feature-product" class="fh5co-section-gray">
 			<div class="container">

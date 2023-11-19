@@ -41,6 +41,7 @@
 							<li><a href="{{ route('YouthServices.Seminarforschool') }}">Seminar for School</a></li>
 						</ul>
 					</li>
+					<li><a href="{{ route('Gallery') }}">Gallery</a></li>
 					<li><a href="{{ route('ContactUs') }}">Contact / Support us</a></li>
 				</ul>
 			</nav>

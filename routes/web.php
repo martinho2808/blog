@@ -23,6 +23,8 @@ use App\Http\Controllers\Page\ServicesController;
 Route::get('/', [PageController::class, 'index'])->name('Home');
 Route::get('/AboutUs', [PageController::class, 'AboutUs'])->name('AboutUs');
 Route::get('/ContactUs', [PageController::class, 'ContactUs'])->name('ContactUs');
+Route::get('/Gallery', [PageController::class, 'Gallery'])->name('Gallery');
+
 
 
 Route::group(['prefix' => 'NewServicesCourses'], function () {

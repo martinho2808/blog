@@ -14,11 +14,14 @@
 @endsection
 
 @section('content')
+<h1>English Fluency Bootcamp</h1>
+
 <div class="col-md-12 text-center animate-box">
 		</div>
 		<div id="fh5co-feature-product" class="fh5co-section-gray">
 			<div class="container">
 				<div class="row">
+				<p><img src="{{URL::asset('image/englishfluencybootcamp.jpeg')}}" alt="Free HTML5 Bootstrap Template" width="800" height="500" class="center"></p>
 						<h1>Course Description:</h1>
 						<p>The "English Fluency Bootcamp" is an intensive and immersive course designed to equip youth with the essential English language skills needed to excel in their careers. This course aims to enhance participants' fluency, accuracy, and confidence in English, empowering them to communicate effectively and succeed in a globalized professional world.</p>
 
