@@ -13,19 +13,15 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 @endsection
 
-@section('js')
-<script src="{{ asset('js/db.js') }}"></script>
-@endsection
-
 @section('content')
     <h1>Management</h1>
     <form method="GET" id="db_form">
         <label>Database:</label>
         <select name="db_table">
-            <option value="DB1" selected>DB1</option>
-            <option value="DB2">DB2</option>
-            <option value="DB3">DB3</option>
-            <option value="DB4">DB4</option>
+        <option value="DB1" {{ $db_table == 'DB1' ? 'selected' : '' }}>DB1</option>
+        <option value="DB2" {{ $db_table == 'DB2' ? 'selected' : '' }}>DB2</option>
+        <option value="DB3" {{ $db_table == 'DB3' ? 'selected' : '' }}>DB3</option>
+        <option value="DB4" {{ $db_table == 'DB4' ? 'selected' : '' }}>DB4</option>
         </select>
         <label>Soft</label>
         @if($noData)
@@ -40,9 +36,14 @@
                 @endforeach
             </select>
         @endif
-        <input type="hidden" id="editing-input" name="editing" value="{{ $editing ? 'true' : 'false' }}">
-        <button type="button" onclick="enableEditing()">Modify</button>
-        <input type="submit" id="submit" value="Submit" />
+        @if ($editing === "false")
+        <input type="hidden" id="editing-input" name="editing" value="{{ $editing = 'true' }}">
+        <input type="submit" value="Modify ON" />
+        @else
+        <input type="hidden" id="editing-input" name="editing" value="{{ $editing = 'false'}}">
+        <input type="submit" value="Modify OFF" />
+        @endif
+        <input type="submit" value="Submit" />
     </form>
     @if($noData)
         <p>No data found.</p>
@@ -62,14 +63,14 @@
         @csrf
         <form action="{{ route('updateData', ['db' => $db_table, 'id' => $row->id]) }}" method="POST">
             <td>
-                @if ($editing === "true")
+                @if ($editing === "false")
                     <input type="text" name="{{ $columnName }}" value="{{ $column }}">
                 @else
                     {{ $column }}
                 @endif
             </td>
         @endforeach
-        @if ($editing === "true")
+        @if ($editing === "false")
             <td>
     <button type="submit">Update</button>
 </form>

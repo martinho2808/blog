@@ -25,6 +25,7 @@ class DbController extends Controller
         $currentPage = request('page', 1);
         $offset = ($currentPage - 1) * $perPage;
         $editing = request('editing')?? false;
+
         
         if ($order === '' || $order === null) {           
         $tableData = DB::table($selectedTable)
