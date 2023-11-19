@@ -14,11 +14,14 @@
 @endsection
 
 @section('content')
+<h1>Crafting Career</h1>
+
 <div class="col-md-12 text-center animate-box">
 		</div>
 		<div id="fh5co-feature-product" class="fh5co-section-gray">
 			<div class="container">
 				<div class="row">
+				<p><img src="{{URL::asset('image/craftingcareer.jpeg')}}" alt="Free HTML5 Bootstrap Template" width="800" height="500" class="center"></p>
 						<h1>Course Description:</h1>
 						<p>"Crafting Careers" is a dynamic and comprehensive course designed to equip youth with the essential skills and knowledge needed to navigate the professional landscape with confidence. This course aims to empower participants to explore different career paths, develop critical skills, and make informed decisions about their future.</p>
 
