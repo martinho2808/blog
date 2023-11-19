@@ -5,6 +5,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dbtable extends Model
 {
+    public $timestamps = false;
+    protected $guarded = [];
+    protected $db;
 
     public function getTable()
     {
@@ -15,5 +18,10 @@ class Dbtable extends Model
     {
         $this->selectedTable = $table;
     }
-    
+
+    public function updateData($id, $db,$data)
+    {
+        return $this->newQuery()->from($db)->where('id', $id)->update($data);
+    }
 }
+
