@@ -98,7 +98,7 @@ class DbController extends Controller
         $db = request('db');
         $db = $this->getdbName($db);
         $data = $request->except('_token', '_method', 'db');
-        // 使用 Eloquent 模型的 update 方法来更新数据
+    
         $model = Dbtable::query()->from($db);
         $model->where('id', $data['id'])->update($data);
         return redirect()->back()->with('success', 'Data deleted successfully');
@@ -110,9 +110,7 @@ public function deleteData($db, $id)
     $db = request('db');
     $db = $this->getdbName($db);
 
-    // 在数据库中删除指定 ID 的记录
     DB::table($db)->where('id', $id)->delete();
-    // 返回到数据显示页面或其他适当的操作
     return redirect()->back()->with('success', 'Data deleted successfully');
 }
 private function getdbName($db)

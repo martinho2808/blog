@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 class Dbtable extends Model
 {
     public $timestamps = false;
-    protected $guarded = []; // 允许所有字段进行批量赋值
-    protected $db; // 添加一个属性用于存储选定的表名
+    protected $guarded = [];
+    protected $db;
 
     public function getTable()
     {
