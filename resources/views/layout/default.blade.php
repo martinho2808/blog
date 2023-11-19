@@ -19,6 +19,7 @@
     <footer>
         @include('layout.footer')
     </footer>
+    @yield('js')
 </div>
 </body>
 </html>

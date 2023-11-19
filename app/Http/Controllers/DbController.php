@@ -24,9 +24,9 @@ class DbController extends Controller
         $perPage = 5;
         $currentPage = request('page', 1);
         $offset = ($currentPage - 1) * $perPage;
+        $editing = request('editing')?? false;
         
-        if ($order === '' || $order === null) {
-                    
+        if ($order === '' || $order === null) {           
         $tableData = DB::table($selectedTable)
         ->offset($offset)
         ->limit($perPage)
@@ -57,20 +57,24 @@ class DbController extends Controller
 
         if ($tableData->isEmpty()) {
             return view('admin.manager', [
+                'db_table' => $selectedTable_name,
                 'tableData' => $tableData,
                 'order' => $order,
                 'title' => 'Management',
                 'noData' => true,
-                'page_show_data' => $page_show_data
+                'page_show_data' => $page_show_data,
+                'editing' => $editing
             ]);
         }
         
         return view('admin.manager', [
+            'db_table' => $selectedTable_name,
             'tableData' => $tableData,
             'order' => $order,
             'title' => 'Management',
             'noData' => $tableData->isEmpty(),
-            'page_show_data' => $page_show_data
+            'page_show_data' => $page_show_data,
+            'editing' => $editing
         ]);
     }
 
@@ -89,4 +93,41 @@ class DbController extends Controller
                 return 'events_register';
         }
     }
+    public function updateData(Request $request)
+    {
+        $db = request('db');
+        $db = $this->getdbName($db);
+        $data = $request->except('_token', '_method', 'db');
+        // 使用 Eloquent 模型的 update 方法来更新数据
+        $model = Dbtable::query()->from($db);
+        $model->where('id', $data['id'])->update($data);
+        return redirect()->back()->with('success', 'Data deleted successfully');
+    }
+    
+
+public function deleteData($db, $id)
+{
+    $db = request('db');
+    $db = $this->getdbName($db);
+
+    // 在数据库中删除指定 ID 的记录
+    DB::table($db)->where('id', $id)->delete();
+    // 返回到数据显示页面或其他适当的操作
+    return redirect()->back()->with('success', 'Data deleted successfully');
+}
+private function getdbName($db)
+{
+switch ($db) {
+case 'DB1':
+return 'events_register';
+case 'DB2':
+return 'event_information';
+case 'DB3':
+return 'another_table';
+case 'DB4':
+return 'yet_another_table';
+default:
+return 'events_register';
+}
+}
 }
