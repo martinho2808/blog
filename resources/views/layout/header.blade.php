@@ -38,7 +38,7 @@
 							<ul class="fh5co-sub-menu">
 							<li><a href="{{ route('WellingActivitiesForElders.ActivitiesEvents') }}">Activities Events</a></li>
 							<li><a href="{{ route('WellingActivitiesForElders.HealthWellness') }}">Health Wellness</a></li>
-							<li><a href="{{ route('WellingActivitiesForElders.ResourcesSupport') }}">Resources Support</a></li>
+							<li><a href="{{ route('WellingActivitiesForElders.ResourcesSupport') }}">What is Dementia</a></li>
 						</ul>
 					</li>
 					<li><a href="{{ route('ContactUs') }}">Contact / Support us</a></li>

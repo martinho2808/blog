@@ -25,7 +25,7 @@
 		</div>
 
 
-				<div id="fh5co-content-section" class="fh5co-section-gray">
+		<div id="fh5co-content-section" class="fh5co-section-gray">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
@@ -43,33 +43,33 @@
 							</figure>
 
 							<div>
-								<h3>Jean Doe</h3>
-								<p><span>Founder</span></p>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+								<h3>Sophia Lee</h3>
+								<p><span>Talented Musician</span></p>
+								<p>Has achieved recognition for her exceptional piano skills. She has won multiple regional music competitions and has been invited to perform at prestigious concert halls. Her dedication to her craft and her ability to captivate audiences with her musical talent are remarkable achievements for a young musician.</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="fh5co-team text-center animate-box">
 							<figure>
-								<img src="images/person_2.jpg" alt="user">
+								<img src="image/youth_icon_3.jpg" alt="user">
 							</figure>
 							<div>
-								<h3>John Doe</h3>
-								<p><span>Founder</span></p>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+								<h3>Emma Li</h3>
+								<p><span>Passionate Environmental Activist</span></p>
+								<p>Has made significant achievements in her advocacy work. She initiated a local campaign to reduce plastic waste in her community, leading to the successful implementation of plastic recycling programs in schools and businesses. Emma's commitment to sustainability and her ability to mobilize others for positive change are commendable achievements for a young environmentalist.</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="fh5co-team text-center animate-box">
 							<figure>
-								<img src="images/person_3.jpg" alt="user">
+								<img src="image/youth_icon_2.jpg" alt="user">
 							</figure>
 							<div>
-								<h3>John Doe</h3>
-								<p><span>Founder</span></p>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+								<h3>Liam Chan</h3>
+								<p><span>Dedicated Student-athlete</span></p>
+								<p>Has achieved remarkable success in the field of track and field. He holds several school records in sprinting events and has consistently performed at a high level in regional and state-level competitions. Liam's commitment to training, discipline, and his ability to excel in his athletics pursuits are impressive achievements for a young athlete.</p>
 							</div>
 						</div>
 					</div>
