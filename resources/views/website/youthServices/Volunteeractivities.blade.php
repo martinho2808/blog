@@ -17,12 +17,15 @@
 <h1>Volunteer activities</h1>
 
 <div class="col-md-12 text-center animate-box">
+<p><img src="{{URL::asset('image/volunteer.jpeg')}}" alt="Free HTML5 Bootstrap Template" width="800" height="500" class="center"></p>
 		</div>
 		<div id="fh5co-feature-product" class="fh5co-section-gray">
 			<div class="container">
 				<div class="row">
 						<h1>Introduction</h1>
+						<ul>
 						<p>Volunteer activities offer a unique opportunity to give back to your community, make a positive impact, and develop valuable skills. Engaging in volunteer work not only benefits those in need but also provides personal growth, networking opportunities, and a sense of fulfillment. Whether you have a specific cause in mind or want to explore different areas of service, there are countless volunteer activities available that align with your interests and schedule.</p>
+						</ul>
 						<br>
 						<ul>
 							<li>Social Services: Assist in shelters, food banks, or community centers, providing support to individuals and families in need.</li>

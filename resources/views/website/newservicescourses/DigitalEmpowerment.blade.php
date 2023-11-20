@@ -18,14 +18,15 @@
 
 
 <div class="col-md-12 text-center animate-box">
+<p><img src="{{URL::asset('image/digitalempowerment.jpeg')}}" alt="Free HTML5 Bootstrap Template" width="800" height="500" class="center"></p>
 		</div>
 		<div id="fh5co-feature-product" class="fh5co-section-gray">
 			<div class="container">
 				<div class="row">
-					<p><img src="{{URL::asset('image/digitalempowerment.jpeg')}}" alt="Free HTML5 Bootstrap Template" width="800" height="500" class="center"></p>
 						<h1>Course Description:</h1>
+						<ul>
 						<p>"Digital Empowerment" is a comprehensive training program designed specifically for elderly individuals seeking to develop essential computer and IT skills. In this course, we aim to empower seniors to confidently navigate the digital landscape, embrace technology, and enhance their everyday lives.</p>
-
+						</ul>
 						<h1>Course Overview:</h1>
 						<h3>Module 1: Introduction to Digital Tools</h3>
 						<ul>

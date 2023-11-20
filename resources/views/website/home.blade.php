@@ -136,28 +136,20 @@
 
 							<li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url({{asset('image/gallery1.jpeg')}}); ">
 									<div class="case-studies-summary">
-										<span>Give Love</span>
-										<h2>Donation is caring</h2>
 									</div>
 							</li>
 						
 							<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url({{asset('image/gallery2.jpeg')}}); ">
 									<div class="case-studies-summary">
-										<span>Give Love</span>
-										<h2>Donation is caring</h2>
 									</div>
 							</li>
 
 							<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url({{asset('image/gallery3.jpeg')}}); "> 
 									<div class="case-studies-summary">
-										<span>Give Love</span>
-										<h2>Donation is caring</h2>
 									</div>
 							</li>
 							<li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url({{asset('image/gallery4.jpeg')}}); ">
 									<div class="case-studies-summary">
-										<span>Give Love</span>
-										<h2>Donation is caring</h2>
 									</div>
 							</li>
 						</ul>		

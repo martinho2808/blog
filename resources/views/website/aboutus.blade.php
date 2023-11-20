@@ -36,5 +36,6 @@
 						<p>We believe that education is the key to unlocking opportunities and transforming lives. Join us on this journey of empowerment and together, let's build a     brighter future.</p>
 					</div>
 				</div>
+</div>	
 				
 @stop
