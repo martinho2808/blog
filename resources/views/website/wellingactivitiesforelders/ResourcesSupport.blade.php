@@ -20,7 +20,7 @@
 @endsection
 
 @section('content')
-		<div id="fh5co-content-section" class="fh5co-section-gray">
+		<div id="fh5co-content-section">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">

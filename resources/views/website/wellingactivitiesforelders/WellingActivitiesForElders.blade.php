@@ -26,7 +26,7 @@
 		
 		
 		
-		<div id="fh5co-feature-product" class="fh5co-section-gray">
+		<div id="fh5co-feature-product">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center heading-section">

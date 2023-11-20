@@ -23,32 +23,32 @@
 					</div>
 				
 				
-					<div class="row row-bottom-padded-md">
-						<div class="col-md-4 text-center animate-box">
-							<p><img src="{{URL::asset('image/mental_1.jpg')}}" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<p><img src="{{URL::asset('image/mental_3.jpg')}}" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<p><img src="{{URL::asset('image/mental_2.jpg')}}" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
-						</div>
+				<div class="row row-bottom-padded-md">
+					<div class="col-md-4 text-center animate-box">
+						<p><img src="{{URL::asset('image/mental_1.jpg')}}" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
 					</div>
-				
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Common Mental Health Callenges Among Youths</h3>
+					<div class="col-md-4 text-center animate-box">
+						<p><img src="{{URL::asset('image/mental_3.jpg')}}" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
 					</div>
+					<div class="col-md-4 text-center animate-box">
+						<p><img src="{{URL::asset('image/mental_2.jpg')}}" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
+					</div>
+				</div>
 				
-					<div class="col-md-8 col-md-offset-2 heading-section animate-box">
-					<h3>1. Anxiety Disorders</h3>
+				<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+					<h3>Common Mental Health Callenges Among Youths</h3>
+				</div>
+				
+				<div class="col-md-8 col-md-offset-2 heading-section animate-box">
+					<p>1. Anxiety Disorders</p>
 					<p>Characterized by excessive worry, fear, or apprehension, impacting daily life and decision-making.</p>
-					<h3>2. Depression</h3>
+					<p>2. Depression</p>
 					<p>Persistent feelings of sadness, hopelessness, and loss of interest in activities, which can affect behavior and emotions.</p>
-					<h3>3. Eating Disorders</h3>
+					<p>3. Eating Disorders</p>
 					<p>Conditions like anorexia nervosa, bulimia nervosa, or binge-eating disorder that affect eating behaviors, body image, and physical health.</p>
-					<h3>4. Substance Abuse</h3>
+					<p>4. Substance Abuse</p>
 					<p>Misuse or addiction to substances like drugs or alcohol, often linked to underlying mental health issues.</p>
-					<h3>5. Attention-Deficit/Hyperactivity Disorder (ADHD)</h3>
+					<p>5. Attention-Deficit/Hyperactivity Disorder (ADHD)</p>
 					<p>Difficulty concentrating, impulsivity, and hyperactivity affecting school, work, and relationships.</p>
 				</div>
 			</div>
