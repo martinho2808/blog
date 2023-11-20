@@ -17,68 +17,69 @@ class DbController extends Controller
     public function db_display()
     {
         $selectedTable = request('db_table');
-        $selectedTable_name =request('db_table');
+        $selectedTable_name = request('db_table');
         $order = request('order');
         $selectedTable = $this->getSelectedTableName($selectedTable);
         $session_tableselect = $selectedTable;
-        $perPage = 5;
+        $perPage = 10;
         $currentPage = request('page', 1);
         $offset = ($currentPage - 1) * $perPage;
-        $editing = request('editing')?? false;
-
+        $editing = request('editing') ?? false;
+        $search = request('search');
         
-        if ($order === '' || $order === null) {           
-        $tableData = DB::table($selectedTable)
-        ->offset($offset)
-        ->limit($perPage)
-        ->get();
-        } else {       
-        $tableData = DB::table($selectedTable)
-        ->offset($offset)
-        ->limit($perPage)
-        ->orderBy($order)
-        ->get();
+        $query = DB::table($selectedTable);
+        if ($search) {
+            $query->where(function ($q) use ($search, $selectedTable) {
+                $columns = Schema::getColumnListing($selectedTable);
+                foreach ($columns as $column) {
+                    $q->orWhere($column, 'LIKE', '%' . $search . '%');
+                }
+            });
         }
         
-        $pageItems = $tableData->slice($offset, $perPage);
+        $totalDataCount = $query->count();
+        
+        if ($order === '' || $order === null) {
+            $tableData = $query->offset($offset)
+                ->limit($perPage)
+                ->get();
+        } else {
+            $tableData = $query->offset($offset)
+                ->limit($perPage)
+                ->orderBy($order)
+                ->get();
+        }
+        
+        $tableDataCollection = collect($tableData); // Convert to collection
         
         $page_show_data = new LengthAwarePaginator(
-            $pageItems,
-            DB::table($selectedTable)->count(),
+            $tableDataCollection,
+            $totalDataCount,
             $perPage,
             $currentPage,
             [
-                'path' => url('admin/manager?db_table'),
+                'path' => url('admin/manager'),
                 'query' => [
                     'db_table' => $selectedTable_name,
+                    'search' => $search,
                     'page' => $currentPage
                 ]
             ]
         );
-
-        if ($tableData->isEmpty()) {
-            return view('admin.manager', [
-                'db_table' => $selectedTable_name,
-                'tableData' => $tableData,
-                'order' => $order,
-                'title' => 'Management',
-                'noData' => true,
-                'page_show_data' => $page_show_data,
-                'editing' => $editing
-            ]);
-        }
         
         return view('admin.manager', [
             'db_table' => $selectedTable_name,
-            'tableData' => $tableData,
+            'tableData' => $tableDataCollection, // Use the collection
             'order' => $order,
             'title' => 'Management',
-            'noData' => $tableData->isEmpty(),
+            'noData' => $tableDataCollection->isEmpty(),
             'page_show_data' => $page_show_data,
-            'editing' => $editing
+            'editing' => $editing,
+            'page' => $currentPage,
+            'totalDataCount' => $totalDataCount
         ]);
     }
-
+    
     private function getSelectedTableName($selectedTable)
     {
         switch ($selectedTable) {

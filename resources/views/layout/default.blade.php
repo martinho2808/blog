@@ -13,13 +13,12 @@
             @include('layout.login')
             @include('layout.header')
         </header>
-
+        @yield('js')
         @yield('content')
     </div>
     <footer>
         @include('layout.footer')
     </footer>
-    @yield('js')
 </div>
 </body>
 </html>

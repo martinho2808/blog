@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{asset('css/superfish.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/event_form.css')}}">
 @endsection
 
 @section('content')
@@ -21,15 +22,17 @@
     <table>
         <tr>
             <td><label for="fname">Frist Name:</label></td>
-            <td><input type="text" id="fname" name="fname"></td>
+            <td><input type="text" id="fname" name="fname" placeholder="Please enter your First Name"></td>
         </tr>
         <tr>
+        <td></td>
             <td><span style="color:red">@error('fname'){{$message}}@enderror</span><td></tr>
         <tr>
             <td><label for="lname">Last Name:</label></td>
-            <td><input type="text" id="lname" name="lname"></td>
+            <td><input type="text" id="lname" name="lname" placeholder="Please enter your Last Name"></td>
         </tr>
         <tr>
+        <td></td>
             <td><span style="color:red">@error('lname'){{$message}}@enderror</span><td></tr>
         <tr>
         <tr>
@@ -44,20 +47,23 @@
     </select>
         </tr>
         <tr>
+        <td></td>
             <td><span style="color:red">@error('event'){{$message}}@enderror</span><td></tr>
         <tr>
         <tr>
             <td><label for="mobile">Mobile Number:</label></td>
-            <td><input type="number" id="mobile" name="mobile"></td>
+            <td><input id="mobile" type="text" name="mobile" placeholder="12345678" pattern="[0-9]{8}"></td>
         </tr>
         <tr>
+        <td></td>
             <td><span style="color:red">@error('mobile'){{$message}}@enderror</span><td></tr>
         <tr>
         <tr>
             <td><label for="email">Email:</label></td>
-            <td><input type="email" id="email" name="email"></td>
+            <td><input type="email" id="email" name="email" placeholder="example@exaple.com"></td>
         </tr>
         <tr>
+        <td></td>
             <td><span style="color:red">@error('email'){{$message}}@enderror</span><td></tr>
         <tr>
         <tr>
@@ -65,6 +71,7 @@
             <td><input type="date" id="date" name="date"></td>
         </tr>
         <tr>
+        <td></td>
             <td><span style="color:red">@error('date'){{$message}}@enderror</span><td></tr>
         <tr>
         <tr>

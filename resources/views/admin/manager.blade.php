@@ -11,11 +11,16 @@
     <link rel="stylesheet" href="{{asset('css/superfish.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+
+    <link rel="stylesheet" href="{{asset('css/db_display.css')}}">
+@endsection
+@section('js')
+<script src="{{ asset('js/manager.js') }}"></script>
 @endsection
 
 @section('content')
     <h1>Management</h1>
-    <form method="GET" id="db_form">
+    <form method="GET" id="db_form" class="db_form">
         <label>Database:</label>
         <select name="db_table">
         <option value="DB1" {{ $db_table == 'DB1' ? 'selected' : '' }}>DB1</option>
@@ -36,41 +41,54 @@
                 @endforeach
             </select>
         @endif
+        <label>Search:</label>
+        <input type="text" name="search" value="" placeholder="Search by keyword">
+        <input type="hidden" id="page-input" name="page" value="{{ $page }}">
         @if ($editing === "false")
         <input type="hidden" id="editing-input" name="editing" value="{{ $editing = 'true' }}">
-        <input type="submit" value="Modify ON" />
+        <input type="submit" value="Modify OFF" />
         @else
         <input type="hidden" id="editing-input" name="editing" value="{{ $editing = 'false'}}">
-        <input type="submit" value="Modify OFF" />
+        <input type="submit" value="Modify ON" />
         @endif
-        <input type="submit" value="Submit" />
+        <input type="submit" onclick=excludeField() value="Submit" />
     </form>
+    <b>Total data found: {{ $totalDataCount }}</b>
     @if($noData)
-        <p>No data found.</p>
+    <table>
+    <tr><th>Error Message</th></tr>
+    <tr><td>No data found.</td></tr>
+</table>
     @else
         <table>
             <thead>
                 <tr>
+                    <th></th>
                     @foreach ($tableData[0] as $columnName => $name)
                         <th>{{ $columnName }}</th>
                     @endforeach
+                    @if ($editing === "true")
+                        <th></th>
+                        <th></th>
+                    @endif
                 </tr>
             </thead>
                     <tbody>
                     @foreach ($tableData as $row)
     <tr>
+        <td></td>
         @foreach ($row as $columnName => $column)
         @csrf
         <form action="{{ route('updateData', ['db' => $db_table, 'id' => $row->id]) }}" method="POST">
             <td>
-                @if ($editing === "false")
+                @if ($editing === "true")
                     <input type="text" name="{{ $columnName }}" value="{{ $column }}">
                 @else
                     {{ $column }}
                 @endif
             </td>
         @endforeach
-        @if ($editing === "false")
+        @if ($editing === "true")
             <td>
     <button type="submit">Update</button>
 </form>
@@ -86,9 +104,9 @@
 @endforeach
         </tbody>
         </table>
-        {{ $page_show_data->links() }}
         <div class="total-data-count">
-            Total data found: {{ $page_show_data->total() }}
-        </div>
+        {{ $page_show_data->links('pagination::bootstrap-4') }}
+</div>
         @endif
 @endsection
+

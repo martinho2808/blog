@@ -42,7 +42,7 @@
 						</ul>
 					</li>
 					<li><a href="{{ route('Gallery') }}">Gallery</a></li>
-					<li><a href="{{ route('ContactUs') }}">Contact / Support us</a></li>
+					<li><a href="{{ route('ContactUs') }}">Contact Us/ Support</a></li>
 				</ul>
 			</nav>
 		</div>
