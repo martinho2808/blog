@@ -15,7 +15,7 @@
 
 @section('content')
 <div class="form">
-<form method="POST" action="{{ route('event.submit') }}">
+<form method="POST" action="{{ route('event_submit') }}">
     <h3>Events Register</h3>
 
     <table>

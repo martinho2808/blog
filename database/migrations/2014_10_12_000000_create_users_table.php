@@ -17,9 +17,14 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('Role')->default('User');;
             $table->rememberToken();
             $table->timestamps();
         });
+
+        DB::table('users')->insert([
+            ['name' => 'Admin','email' => 'admin@admin.com', 'password' => '$2y$12$g4LO3PcB0LxqWuuDXmj5Yu3ulfHNtzWKmNdzyCet5apos/z1aqlhu', 'Role' => 'Admin'],
+        ]);
     }
 
     /**
