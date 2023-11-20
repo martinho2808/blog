@@ -15,6 +15,23 @@
 @endsection
 
 @section('content')
+<div class="container">
+	<div class="row row-bottom-padded-md">
+		<div class="col-md-15 text-center animate-box">
+			<center><p><img src="{{URL::asset('image/activity_1.jpg')}}" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p></center>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+			<h3>Silver Years Wellness Festival: Register Now!</h3>
+			<p>Welcome to the "Silver Years Wellness Festival", a day of rejuventation and engagement for seniors.</p>
+			<h4>PLEASE FILL IN THE FORM BELOW TO JOIN THIS EXCITING EVENT!</h4>
+		</div>
+	</div>
+</div>
+
+
 <div class="form">
 <form method="POST" action="{{ route('event_submit') }}">
     <h3>Events Register</h3>
@@ -60,7 +77,7 @@
         <tr>
         <tr>
             <td><label for="email">Email:</label></td>
-            <td><input type="email" id="email" name="email" placeholder="example@exaple.com"></td>
+            <td><input type="email" id="email" name="email" placeholder="example@example.com"></td>
         </tr>
         <tr>
         <td></td>
@@ -79,5 +96,9 @@
         </tr>
     </table>
 </form>
+</div>
+
+<div class="row">
+<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box"></div>
 </div>
 @stop

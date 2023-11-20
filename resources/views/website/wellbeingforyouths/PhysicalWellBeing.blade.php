@@ -37,7 +37,7 @@
 				<p>3. Sleep</p>
 				<p>Sufficient and quality sleep is crucial for physical and mental well-being among youths. Establishing consistent sleep patterns and ensuring adequate rest (typically 8-10 hours per night) is essential for growth and overall health.</p>
 				<p>4. Hygiene</p>
-				<p>Teaching proper hygiene practices, including regular handwashing, oral hygiene, and personal grooming, helps prevent the spread of illnesses and promotes overall health..</p>				
+				<p>Teaching proper hygiene practices, including regular handwashing, oral hygiene, and personal grooming, helps prevent the spread of illnesses and promotes overall health.</p>				
 
 				
 		</div>
