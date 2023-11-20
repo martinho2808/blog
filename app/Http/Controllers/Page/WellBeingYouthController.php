@@ -11,7 +11,7 @@ class WellBeingYouthController extends Controller
     public function WellBeingForYouths()
     {
         return view('website.wellbeingforyouths.WellBeingForYouths', [
-            'title' => 'Well Being For Youths'
+            'title' => 'Welling for Youths'
         ]);
     }
 
