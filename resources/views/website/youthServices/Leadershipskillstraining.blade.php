@@ -17,12 +17,15 @@
     <h1>Leadership Skills & Training</h1>
 
     <div class="col-md-12 text-center animate-box">
+	<p><img src="{{URL::asset('image/leadership.jpeg')}}" alt="Free HTML5 Bootstrap Template" width="800" height="500" class="center"></p>
 		</div>
 		<div id="fh5co-feature-product" class="fh5co-section-gray">
 			<div class="container">
 				<div class="row">
 						<h1>Introduction</h1>
+						<ul>
 						<p>Leadership skills are crucial for success in various aspects of life, including professional careers, community involvement, and personal growth. Effective leaders inspire and motivate others, drive positive change, and navigate challenges with resilience. Leadership skills can be learned and honed through training and development. This section explores key areas of leadership skills training to help you unlock your full leadership potential.</p>
+						</ul>
 						<br>
 						<h3>Understanding Leadership:</h3>
 						<ul>
@@ -43,6 +46,7 @@
 						<ul>
 							<li>Build cohesive teams, delegate tasks, and empower team members.</li>
 							<li>Understand motivation theories and provide effective feedback.</li>
+						</ul>
 						<h3>Adaptability and Ethical Leadership:</h3>
 						<ul>
 							<li>Develop adaptability skills and thrive in dynamic environments.</li>
