@@ -33,7 +33,7 @@ class ActivitiesController extends Controller
     public function ResourcesSupport()
     {
         return view('website.wellingactivitiesforelders.ResourcesSupport', [
-            'title' => 'Resources Support'
+            'title' => 'What is dementia'
         ]);
     }
 

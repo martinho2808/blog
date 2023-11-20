@@ -24,7 +24,7 @@ class PageController extends Controller
     public function ContactUs()
     {
         return view('website.contactus', [
-            'title' => 'Contact US'
+            'title' => 'Contact / Support us'
         ]);
     }
     public function Gallery()

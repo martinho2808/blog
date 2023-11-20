@@ -17,61 +17,71 @@ class DbController extends Controller
     public function db_display()
     {
         $selectedTable = request('db_table');
-        $selectedTable_name =request('db_table');
-        $order = request('asc');
+        $selectedTable_name = request('db_table');
+        $order = request('order');
         $selectedTable = $this->getSelectedTableName($selectedTable);
         $session_tableselect = $selectedTable;
-        $perPage = 5;
-
-        $tableData = DB::table($selectedTable);
+        $perPage = 10;
+        $currentPage = request('page', 1);
+        $offset = ($currentPage - 1) * $perPage;
+        $editing = request('editing') ?? false;
+        $search = request('search');
         
-        if ($order === '' || $order === null) {
-            $tableData = $tableData->get();
-        } else {
-            $tableData = $tableData->orderBy('id', $order)->get();
+        $query = DB::table($selectedTable);
+        if ($search) {
+            $query->where(function ($q) use ($search, $selectedTable) {
+                $columns = Schema::getColumnListing($selectedTable);
+                foreach ($columns as $column) {
+                    $q->orWhere($column, 'LIKE', '%' . $search . '%');
+                }
+            });
         }
         
-        $currentPage = request()->input('page', 1);
-        $offset = ($currentPage - 1) * $perPage;
-        $pageItems = $tableData->slice($offset, $perPage);
+        $totalDataCount = $query->count();
+        
+        if ($order === '' || $order === null) {
+            $tableData = $query->offset($offset)
+                ->limit($perPage)
+                ->get();
+        } else {
+            $tableData = $query->offset($offset)
+                ->limit($perPage)
+                ->orderBy($order)
+                ->get();
+        }
+        
+        $tableDataCollection = collect($tableData); // Convert to collection
         
         $page_show_data = new LengthAwarePaginator(
-            $pageItems,
-            $tableData->count(),
+            $tableDataCollection,
+            $totalDataCount,
             $perPage,
             $currentPage,
             [
-                'path' => url('admin/manager?db_table'),
+                'path' => url('admin/manager'),
                 'query' => [
                     'db_table' => $selectedTable_name,
-                    'asc' => $order
+                    'search' => $search,
+                    'page' => $currentPage
                 ]
             ]
         );
-
-        if ($tableData->isEmpty()) {
-            return view('admin.manager', [
-                'tableData' => $tableData,
-                'order' => $order,
-                'title' => 'Management',
-                'noData' => true,
-                'page_show_data' => $page_show_data
-            ]);
-        }
         
         return view('admin.manager', [
-            'tableData' => $tableData,
+            'db_table' => $selectedTable_name,
+            'tableData' => $tableDataCollection, // Use the collection
             'order' => $order,
             'title' => 'Management',
-            'noData' => $tableData->isEmpty(),
-            'page_show_data' => $page_show_data
+            'noData' => $tableDataCollection->isEmpty(),
+            'page_show_data' => $page_show_data,
+            'editing' => $editing,
+            'page' => $currentPage,
+            'totalDataCount' => $totalDataCount
         ]);
     }
-
+    
     private function getSelectedTableName($selectedTable)
     {
-        // 根据需要进行动态表格名称的映射
-        // 例如：
         switch ($selectedTable) {
             case 'DB1':
                 return 'events_register';
@@ -85,4 +95,39 @@ class DbController extends Controller
                 return 'events_register';
         }
     }
+    public function updateData(Request $request)
+    {
+        $db = request('db');
+        $db = $this->getdbName($db);
+        $data = $request->except('_token', '_method', 'db');
+    
+        $model = Dbtable::query()->from($db);
+        $model->where('id', $data['id'])->update($data);
+        return redirect()->back()->with('success', 'Data deleted successfully');
+    }
+    
+
+public function deleteData($db, $id)
+{
+    $db = request('db');
+    $db = $this->getdbName($db);
+
+    DB::table($db)->where('id', $id)->delete();
+    return redirect()->back()->with('success', 'Data deleted successfully');
+}
+private function getdbName($db)
+{
+switch ($db) {
+case 'DB1':
+return 'events_register';
+case 'DB2':
+return 'event_information';
+case 'DB3':
+return 'another_table';
+case 'DB4':
+return 'yet_another_table';
+default:
+return 'events_register';
+}
+}
 }
