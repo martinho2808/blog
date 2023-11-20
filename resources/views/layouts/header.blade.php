@@ -19,21 +19,6 @@
 						</ul>
 					</li>
 					<li>
-						<a href="{{ route('WellingActivitiesForElders') }}" class="fh5co-sub-ddown">Well Being Activities for Elders</a>
-							<ul class="fh5co-sub-menu">
-							<li><a href="{{ route('WellingActivitiesForElders.ActivitiesEvents') }}">Activities Events</a></li>
-							<li><a href="{{ route('WellingActivitiesForElders.HealthWellness') }}">Health Wellness</a></li>
-							<li><a href="{{ route('WellingActivitiesForElders.ResourcesSupport') }}">Resources Support</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="{{ route('WellbeingForYouths') }}" class="fh5co-sub-ddown">Well Being for Youths</a>
-							<ul class="fh5co-sub-menu">
-							<li><a href="{{ route('WellbeingForYouths.MentalHealth') }}">Mental Health</a></li>
-							<li><a href="{{ route('WellbeingForYouths.PhysicalWellBeing') }}">Physical Well Being</a></li>
-						</ul>
-					</li>
-					<li>
 						<a href="{{ route('YouthServices') }}" class="fh5co-sub-ddown">Youth Services</a>
 							<ul class="fh5co-sub-menu">
 							<li><a href="{{ route('YouthServices.Volunteeractivities') }}">Volunteer Activities</a></li>
@@ -41,8 +26,23 @@
 							<li><a href="{{ route('YouthServices.Seminarforschool') }}">Seminar for School</a></li>
 						</ul>
 					</li>
+					<li>
+						<a href="{{ route('WellbeingForYouths') }}" class="fh5co-sub-ddown">Welling for Youths</a>
+							<ul class="fh5co-sub-menu">
+							<li><a href="{{ route('WellbeingForYouths.MentalHealth') }}">Mental Health</a></li>
+							<li><a href="{{ route('WellbeingForYouths.PhysicalWellBeing') }}">Physical Well Being</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="{{ route('WellingActivitiesForElders') }}" class="fh5co-sub-ddown">Welling & Activities for Elders</a>
+							<ul class="fh5co-sub-menu">
+							<li><a href="{{ route('WellingActivitiesForElders.ActivitiesEvents') }}">Activities Events</a></li>
+							<li><a href="{{ route('WellingActivitiesForElders.HealthWellness') }}">Health Wellness</a></li>
+							<li><a href="{{ route('WellingActivitiesForElders.ResourcesSupport') }}">What is Dementia</a></li>
+						</ul>
+					</li>
 					<li><a href="{{ route('Gallery') }}">Gallery</a></li>
-					<li><a href="{{ route('ContactUs') }}">Contact / Support us</a></li>
+					<li><a href="{{ route('ContactUs') }}">Contact Us/ Support</a></li>
 				</ul>
 			</nav>
 		</div>

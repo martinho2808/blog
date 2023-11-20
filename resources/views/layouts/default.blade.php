@@ -14,7 +14,7 @@
             @include('layouts.login')
             @include('layouts.header')
         </header>
-
+        @yield('js')
         @yield('content')
     </div>
     <footer>
