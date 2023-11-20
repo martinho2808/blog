@@ -1,4 +1,4 @@
-@extends('layout.default')
+@extends('layouts.default')
 
 @section('styles')
     <!-- Animate.css -->

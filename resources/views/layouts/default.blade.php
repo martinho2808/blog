@@ -10,14 +10,15 @@
 <div id="fh5co-wrapper">
 	<div id="fh5co-page">
         <header id="fh5co-header-section" class="sticky-banner">
-            @include('layout.login')
-            @include('layout.header')
+            
+            @include('layouts.login')
+            @include('layouts.header')
         </header>
 
         @yield('content')
     </div>
     <footer>
-        @include('layout.footer')
+        @include('layouts.footer')
     </footer>
 </div>
 </body>
