@@ -14,6 +14,8 @@
 @endsection
 
 @section('content')
+<h1>Volunteer activities</h1>
+
 <div class="col-md-12 text-center animate-box">
 		</div>
 		<div id="fh5co-feature-product" class="fh5co-section-gray">

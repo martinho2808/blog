@@ -27,4 +27,10 @@ class PageController extends Controller
             'title' => 'Contact / Support us'
         ]);
     }
+    public function Gallery()
+    {
+        return view('website.gallery', [
+            'title' => 'Gallery'
+        ]);
+    }
 }
