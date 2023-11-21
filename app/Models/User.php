@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'user_name',
+        'name',
         'email',
         'password',
     ];
@@ -42,8 +42,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-    public function events()
-    {
-        return $this->hasMany(EventRegister::class, 'user_name', 'user_name');
-    }
+
 }
