@@ -37,6 +37,10 @@
     <h3>Events Register</h3>
     @csrf
     <table>
+    <tr>
+            <td><label for="fname">User name:</label></td>
+            <td><input type="text" id="username" name="user_name" placeholder="test"></td>
+        </tr>
         <tr>
             <td><label for="fname">Frist Name:</label></td>
             <td><input type="text" id="fname" name="fname" placeholder="Please enter your First Name"></td>
@@ -67,7 +71,6 @@
         <td></td>
             <td><span style="color:red">@error('event'){{$message}}@enderror</span><td></tr>
         <tr>
-        <tr>
             <td><label for="mobile">Mobile Number:</label></td>
             <td><input id="mobile" type="text" name="mobile" placeholder="12345678" pattern="[0-9]{8}"></td>
         </tr>
@@ -75,22 +78,12 @@
         <td></td>
             <td><span style="color:red">@error('mobile'){{$message}}@enderror</span><td></tr>
         <tr>
-        <tr>
-            <td><label for="email">Email:</label></td>
-            <td><input type="email" id="email" name="email" placeholder="example@example.com"></td>
-        </tr>
-        <tr>
-        <td></td>
-            <td><span style="color:red">@error('email'){{$message}}@enderror</span><td></tr>
-        <tr>
-        <tr>
             <td><label for="date">Date:</label></td>
             <td><input type="date" id="date" name="date"></td>
         </tr>
         <tr>
         <td></td>
             <td><span style="color:red">@error('date'){{$message}}@enderror</span><td></tr>
-        <tr>
         <tr>
             <td colspan="2"><button type="submit">Submit</button></td>
         </tr>

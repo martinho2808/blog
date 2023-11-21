@@ -1,4 +1,4 @@
-@extends('layout.default')
+@extends('layouts.default')
 
 @section('styles')
     <!-- Animate.css -->
@@ -23,11 +23,12 @@
     <form method="GET" id="db_form" class="db_form">
         <label>Database:</label>
         <select name="db_table">
-        <option value="DB1" {{ $db_table == 'DB1' ? 'selected' : '' }}>DB1</option>
-        <option value="DB2" {{ $db_table == 'DB2' ? 'selected' : '' }}>DB2</option>
-        <option value="DB3" {{ $db_table == 'DB3' ? 'selected' : '' }}>DB3</option>
-        <option value="DB4" {{ $db_table == 'DB4' ? 'selected' : '' }}>DB4</option>
-        </select>
+    @foreach ($tableNames as $tableName)
+        <option value="{{ $tableName }}" {{ $db_table == $tableName ? 'selected' : '' }}>
+            {{ $tableName }}
+        </option>
+    @endforeach
+</select>
         <label>Soft</label>
         @if($noData)
             <select name="order" disabled="disabled">
@@ -43,7 +44,7 @@
         @endif
         <label>Search:</label>
         <input type="text" name="search" value="" placeholder="Search by keyword">
-        <input type="hidden" id="page-input" name="page" value="{{ $page }}">
+        <input type="hidden" id="page-input" name="page" value="{{ $page }}"><br>
         @if ($editing === "false")
         <input type="hidden" id="editing-input" name="editing" value="{{ $editing = 'true' }}">
         <input type="submit" value="Modify OFF" />
@@ -53,7 +54,9 @@
         @endif
         <input type="submit" onclick=excludeField() value="Submit" />
     </form>
-    <b>Total data found: {{ $totalDataCount }}</b>
+    <label><b>Total data found: {{ $totalDataCount }}</b></label>
+    <a href="{{ route('downloadPdf', ['db' => $db_table, 'order' => $order ?? 'null', 'search' => $search ?? 'null']) }}" target="_blank" class="download-link">Download Table PDF</a>
+    <a href="{{ route('downloadAllTables') }}" target="_blank" class="download-link">Download Report</a>
     @if($noData)
     <table>
     <tr><th>Error Message</th></tr>

@@ -16,10 +16,16 @@
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"> </script>
 	
-    <script src="{{asset('js/gameScript.js')}}"> </script>
+	<script>
+       var gameRecordUrl = "/game/record";
+    </script>
+	
+    <script src="{{asset('js/gameScript.js')}}"></script>
 @endsection
 
 @section('content')
+
+
 		<div id="fh5co-content-section">
 			<div class="container">
 				<div class="row">
@@ -46,7 +52,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div id="ol"> </div>
 		<div style="height: 8px;"></div>
 		<div id="title">
@@ -54,11 +59,10 @@
 		<span id="moves"></span>
 		<span id="time"></span>
 		</div>
-		
 		<center>
 			<table cellspacing="0"></table>
 		</center>
 		<br/>
 		<br/>
 		<br/>
-@stop
+		@endsection
