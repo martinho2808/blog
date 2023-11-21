@@ -14,19 +14,19 @@ class DataController extends Controller
     function event_submit(Request $request)
     {
         $request->validate([
+            'user_name' =>'required',
             'fname' => 'required|max:10|regex:/^[a-zA-Z\s]+$/',
             'lname' => 'required|max:10|regex:/^[a-zA-Z\s]+$/',
             'event_id' => 'required|in:A01,A02,A03,A04',
             'mobile' => 'required|regex:/^\d{8}$/',
-            'email' => 'required|email',
             'date' => 'required|after_or_equal:today|date_format:Y-m-d',
         ]);
         $eventRegister = new Eventreg();
+        $eventRegister->user_name = $request->input('user_name');
         $eventRegister->fname = $request->input('fname');
         $eventRegister->lname = $request->input('lname');
         $eventRegister->event_id = $request->input('event_id');
         $eventRegister->mobile = $request->input('mobile');
-        $eventRegister->email = $request->input('email');
         $eventRegister->date = $request->input('date');
         $eventRegister->save();
         return Redirect::route('WellingActivitiesForElders.ActivitiesEvents'); //

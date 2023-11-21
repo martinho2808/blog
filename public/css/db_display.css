@@ -3,31 +3,34 @@
 /* Add desired styles to the elements in your template */
 
 form.db_form {
-    margin-bottom: 20px;
+    margin-bottom: 2%;
     }
     
     label {
     display: block;
     margin-bottom: 5px;
-    margin-left: 3%;
+    margin-left: 30px;
     font-weight: bold;
     }
     
     select,
     input[type="text"] {
-    width: 200px;
+    min-width: 240px;
+    width: auto;
     padding: 5px;
     margin-bottom: 10px;
-    margin-left: 3%;
+    margin-left: 30px;
     }
     
     input[type="submit"],
     button {
-    padding: 5px 10px;
+    padding: 5px 20px;
     background-color: #333;
     color: #fff;
     border: none;
     cursor: pointer;
+    margin-top: 10px;
+    margin-left: 30px;
     }
     
     input[type="submit"]:hover,
@@ -43,7 +46,7 @@ form.db_form {
         width: 100%;
         border-collapse: separate; /* 使用 separate 而非 collapse */
         border-spacing: 0 10px; /* 设置行间距为 10px */
-        margin-bottom: 20px;
+        margin-bottom: 3%;
     }
     
     th,
@@ -65,4 +68,24 @@ form.db_form {
     .total-data-count {
     color: #777;
     margin-top: 20px;
+    margin-left: 15px;
+    }
+
+    b{
+        margin-bottom: 3%;
+    }
+    footer{
+        margin-top: 14%;
+    }
+
+    a.download-link {
+        padding: 5px 10px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        margin-left: 30px;
+    }
+    
+    a.download-link:hover {
+        background-color: #555;
     }

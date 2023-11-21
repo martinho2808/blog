@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('user_name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -23,7 +23,8 @@ return new class extends Migration
         });
 
         DB::table('users')->insert([
-            ['name' => 'Admin','email' => 'admin@admin.com', 'password' => '$2y$12$g4LO3PcB0LxqWuuDXmj5Yu3ulfHNtzWKmNdzyCet5apos/z1aqlhu', 'Role' => 'Admin'],
+            ['user_name' => 'Admin','email' => 'admin@admin.com', 'password' => '$2y$12$g4LO3PcB0LxqWuuDXmj5Yu3ulfHNtzWKmNdzyCet5apos/z1aqlhu', 'Role' => 'Admin'],
+            ['user_name' => 'test','email' => 'test@admin.com', 'password' => '$2y$12$g4LO3PcB0LxqWuuDXmj5Yu3ulfHNtzWKmNdzyCet5apos/z1aqlhu', 'Role' => 'user'],
         ]);
     }
 

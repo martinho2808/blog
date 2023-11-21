@@ -1,3 +1,4 @@
+
 var em = ["💐","🌹","🌻","🏵️","🌺","🌴","🌈","🍓","🍒","🍎","🍉","🍊","🥭","🍍","🍋","🍏","🍐","🥝","🍇","🥥","🍅","🌶️","🍄","🧅","🥦","🥑","🍔","🍕","🧁","🎂","🍬","🍩","🍫","🎈"];
 //Shuffling above array
 var tmp, c, p = em.length;
@@ -124,6 +125,7 @@ function change(x) {
     //If all pairs are matched
     if (rem==0) {
           clearInterval(time);
+          var time;
           if (min==0) {
               time = `${sec} seconds`;
           }
@@ -131,8 +133,23 @@ function change(x) {
               time = `${min} minute(s) and ${sec} second(s)`;
           }
           setTimeout(function() {
-              $("#ol").html(`<center><div id="iol"><h2>Congrats!</h2><p style="font-size:23px;padding:10px;">You completed the ${mode} mode in ${moves} moves. It took you ${time}.</p><p style="font-size:18px">Comment Your Score!<br/>Play Again ?</p><button onclick="start(3, 4)">3 x 4</button> <button onclick="start(4, 4)" style="w">4 x 4</button><button onclick="start(4, 5)">4 x 5</button></div></center>`);
-              $("#ol").fadeIn(750);
+            $("#ol").html(`<center>
+              <div id="iol">
+                <h2>Congrats!</h2>
+                <form method="POST" action="/game/record" id="db_game">
+                <input type="hidden" name="game_data" value='${JSON.stringify({ "mode": mode, "moves": moves, "time": time })}'>
+                <p style="font-size:23px;padding:10px;">You completed the ${mode} mode in ${moves} moves. It took you ${time}.</p><p style="font-size:18px">
+                <input type="submit" value="Submit">
+                <input type="text" name="user_name" placeholder="Please input your username!"><br>
+                <p style="font-size: 18px">Comment Your Score!</p>
+              </form>
+                <p style="font-size:18px"><br/>Play Again ?</p>
+                <button onclick="start(3, 4)">3 x 4</button>
+                <button onclick="start(4, 4)" style="w">4 x 4</button>
+                <button onclick="start(4, 5)">4 x 5</button>
+              </div>
+            </center>`);
+            $("#ol").fadeIn(750);
           }, 1500);
     }
   }
