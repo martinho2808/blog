@@ -26,7 +26,8 @@
 		
 		<div id="fh5co-contact" class="animate-box">
 			<div class="container">
-				<form action="#">
+				<form method="POST" action="{{ route('contect_request') }}">
+				@csrf
 					<div class="row">
 						<div class="col-md-6">
 							<h3 class="section-title">Our Address</h3>
@@ -42,17 +43,20 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Name">
+										<input type="text" class="form-control" placeholder="Name" name="contect_name">
+										<span style="color:red">@error('contect_name'){{$message}}@enderror</span>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Email">
+										<input type="text" class="form-control" placeholder="Email" name="contect_email">
+										<span style="color:red">@error('contect_email'){{$message}}@enderror</span>
 									</div>
 								</div>
 								<div class="col-md-12">
 									<div class="form-group">
-										<textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea>
+										<textarea name="message" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea>
+										<span style="color:red">@error('message'){{$message}}@enderror</span>
 									</div>
 								</div>
 								<div class="col-md-12">

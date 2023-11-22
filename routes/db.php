@@ -5,12 +5,13 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\DbController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\Contect_MessageController;
 
 Route::post('/submit', [DataController::class, 'event_submit'])->name('event_submit');
 
 Route::post('/game/record', [GameController::class, 'insertGameRecord'])->name('game_record');
 
-Route::get('/admin/manager',  [DbController::class, 'db_display'])->name('db_display');
+Route::post('/contect_request', [Contect_MessageController::class, 'contect_request'])->name('contect_request');
 
 Route::get('/download-pdf/{db}/{order}/{search}', [DbController::class, 'downloadPdf'])->name('downloadPdf');
 Route::get('/download-all-tables', [DbController::class, 'downloadAllTables'])->name('downloadAllTables');

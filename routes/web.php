@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\DbController;
 use App\Http\Controllers\Page\CoursesController;
 use App\Http\Controllers\Page\ActivitiesController;
 use App\Http\Controllers\Page\WellBeingYouthController;
@@ -25,9 +26,10 @@ Route::get('/a', function () {
 });
 
 //Admin page
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified','admin'])->name('dashboard');
+//Route::get('/dashboard', function () {
+    //return view('dashboard');
+//})->middleware(['auth', 'verified','admin'])->name('dashboard');
+Route::get('/admin/manager',  [DbController::class, 'db_display'])->name('db_display');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

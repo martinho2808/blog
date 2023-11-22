@@ -19,7 +19,7 @@
                                 
                                 <a href="{{route('profile.edit')}}">{{ __('Profile') }}</a>
                                 @if(Auth::user()->Role =='Admin' )
-                                <a href="{{route('dashboard')}}">
+                                <a href="{{route('db_display')}}">
                                     {{ __('Management') }}
                                 </a>
                                 @endif
