@@ -20,7 +20,12 @@
        var gameRecordUrl = "/game/record";
     </script>
 	
-    <script src="{{asset('js/gameScript.js')}}"></script>
+    
+@endsection
+
+
+@section('js')
+<script src="{{asset('js/gameScript.js')}}"></script>
 @endsection
 
 @section('content')
@@ -52,6 +57,10 @@
 				</div>
 			</div>
 		</div>
+		@if (session('success'))
+		<div><dialog open>Submitted successfully!<form method='dialog'><button class="ABC">OK</button></form></dialog></div>
+		@endif
+
 		<div id="ol"> </div>
 		<div style="height: 8px;"></div>
 		<div id="title">

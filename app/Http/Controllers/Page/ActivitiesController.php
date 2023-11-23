@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ActivitiesController extends Controller
 {
-    //Well Being Activities for Elders
+    /*control url display view and titile */
 
     public function WellingActivitiesForElders()
     {
@@ -18,8 +19,11 @@ class ActivitiesController extends Controller
 
     public function ActivitiesEvents()
     {
+
+        $eventlists = DB::table('event_information')->pluck('event_name')->toArray();
         return view('website.wellingactivitiesforelders.ActivitiesEvents', [
-            'title' => 'Activities Events'
+            'title' => 'Activities Events',
+            'eventlists' => $eventlists
         ]);
     }
 

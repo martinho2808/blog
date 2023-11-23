@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use views;
 
+/*control url display view and titile */
 class PageController extends Controller
 {
     public function index()

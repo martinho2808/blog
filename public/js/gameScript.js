@@ -138,10 +138,10 @@ function change(x) {
                 <h2>Congrats!</h2>
                 <form method="POST" action="/game/record" id="db_game">
                 <input type="hidden" name="game_data" value='${JSON.stringify({ "mode": mode, "moves": moves, "time": time })}'>
-                <p style="font-size:23px;padding:10px;">You completed the ${mode} mode in ${moves} moves. It took you ${time}.</p><p style="font-size:18px">
-                <input type="submit" value="Submit">
-                <input type="text" name="user_name" placeholder="Please input your username!"><br>
+                <p style="font-size:23px;padding:10px;">You completed the ${mode} mode in ${moves} moves. It took you ${time}.</p>
+                <input type="text" name="user_name" placeholder="Enter your name!"><br>
                 <p style="font-size: 18px">Comment Your Score!</p>
+                <input type="submit" value="Submit">
               </form>
                 <p style="font-size:18px"><br/>Play Again ?</p>
                 <button onclick="start(3, 4)">3 x 4</button>

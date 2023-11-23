@@ -3,6 +3,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/* Control the link table and limit the input filedame */
 class Eventreg extends Model
 {
     protected $table = 'events_register';

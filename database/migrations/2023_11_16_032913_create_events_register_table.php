@@ -15,10 +15,9 @@ class CreateEventsRegisterTable extends Migration
     {
         Schema::create('events_register', function (Blueprint $table) {
             $table->id();
-            $table->string('user_name');
             $table->string('fname', 10);
             $table->string('lname', 10);
-            $table->string('event_id', 5);
+            $table->string('event_name');
             $table->string('mobile', 8);
             $table->date('date');
             $table->timestamps();

@@ -30,23 +30,22 @@
 		</div>
 	</div>
 </div>
-
+@if (session('success'))
+    <div><dialog open>Submitted successfully!<form method='dialog'><button>OK</button></form></dialog></div>
+@endif
 
 <div class="form">
-<form method="POST" action="{{ route('event_submit') }}">
     <h3>Events Register</h3>
+    <form method="POST" action="{{ route('event_submit') }}">
     @csrf
     <table>
-    <tr>
-            <td><label for="fname">User name:</label></td>
-            <td><input type="text" id="username" name="user_name" placeholder="test"></td>
-        </tr>
         <tr>
             <td><label for="fname">Frist Name:</label></td>
             <td><input type="text" id="fname" name="fname" placeholder="Please enter your First Name"></td>
         </tr>
         <tr>
         <td></td>
+            <!-- error display by verify -->
             <td><span style="color:red">@error('fname'){{$message}}@enderror</span><td></tr>
         <tr>
             <td><label for="lname">Last Name:</label></td>
@@ -54,21 +53,26 @@
         </tr>
         <tr>
         <td></td>
+        <!-- error display by verify -->
             <td><span style="color:red">@error('lname'){{$message}}@enderror</span><td></tr>
         <tr>
         <tr>
             <td><label for="event">Events:</label></td>
-            <td><select id="event_id" name="event_id">
-            <option value="">Please select the Events</option>
-            <option value="A01">Event1</option>
-            <option value="A02">Event2</option>
-            <option value="A03">Event3</option>
-            <option value="A04">Event4</option>
+            <td><select id="event_name" name="event_name">
+            <option>Please select the Events</option>
+            <!-- use loop to get laster data -->
+            @foreach ($eventlists as $eventname)
+            <option value="{{ $eventname }}">{{ $eventname }}</option>
+            @endforeach
             </td>
-    </select>
+        </select>
         </tr>
+        <td></td>
+        <!-- error display by verify -->
+        <td><span style="color:red">@error('event_name'){{$message}}@enderror</span><td>
         <tr>
         <td></td>
+        <!-- error display by verify -->
             <td><span style="color:red">@error('event'){{$message}}@enderror</span><td></tr>
         <tr>
             <td><label for="mobile">Mobile Number:</label></td>
@@ -76,6 +80,7 @@
         </tr>
         <tr>
         <td></td>
+        <!-- error display by verify -->
             <td><span style="color:red">@error('mobile'){{$message}}@enderror</span><td></tr>
         <tr>
             <td><label for="date">Date:</label></td>
@@ -83,9 +88,10 @@
         </tr>
         <tr>
         <td></td>
+        <!-- error display by verify -->
             <td><span style="color:red">@error('date'){{$message}}@enderror</span><td></tr>
         <tr>
-            <td colspan="2"><button type="submit">Submit</button></td>
+            <td colspan="2"><button type="submit" id="modal-trigger">Submit</button></td>
         </tr>
     </table>
 </form>

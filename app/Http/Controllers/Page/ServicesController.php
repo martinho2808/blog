@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ServicesController extends Controller
 {
-    //
+    /*control url display view and titile */
     public function YouthServices()
     {
         return view('website.youthServices.YouthServices', [

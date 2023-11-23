@@ -8,12 +8,6 @@
                     <h1 id="fh5co-logo"><a href="{{route('Home')}}">EMPOWERLINK SOLUTIONS</a></h1>
                 </div>
 
-                <!-- Navigation Links
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                </div>-->
             </div>
 
             <!-- Settings Dropdown -->
@@ -39,7 +33,7 @@
                             {{ __('Profile') }}
                         </x-dropdown-link>
                         @if(Auth::user()->Role =='Admin' )
-                        <x-dropdown-link :href="route('dashboard')">
+                        <x-dropdown-link :href="route('db_display')">
                             {{ __('Management') }}
                         </x-dropdown-link>
                         @endif
@@ -74,8 +68,8 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+            <x-responsive-nav-link :href="route('db_display')" :active="request()->routeIs('db_display')">
+                {{ __('Management') }}
             </x-responsive-nav-link>
         </div>
 

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CoursesController extends Controller
 {
-    //New Services & Courses
+    /*control url display view and titile */
     public function NewServicesCourses()
     {
         return view('website.newservicescourses.NewServicesCourses', [

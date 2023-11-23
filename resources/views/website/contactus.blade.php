@@ -23,11 +23,8 @@
 				</div>
 			</div>
 		</div>
-		
 		<div id="fh5co-contact" class="animate-box">
 			<div class="container">
-				<form method="POST" action="{{ route('contect_request') }}">
-				@csrf
 					<div class="row">
 						<div class="col-md-6">
 							<h3 class="section-title">Our Address</h3>
@@ -43,6 +40,8 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
+									<form method="POST" action="{{ route('contect_request') }}" id="message_submit">
+									@csrf
 										<input type="text" class="form-control" placeholder="Name" name="contect_name">
 										<span style="color:red">@error('contect_name'){{$message}}@enderror</span>
 									</div>
@@ -63,13 +62,17 @@
 									<div class="form-group">
 										<input type="submit" value="Send Message" class="btn btn-primary">
 									</div>
+									</form>
+									@if (session('success'))
+    								<div><dialog open>Submitted successfully!<form method='dialog'><button>OK</button></form></dialog></div>
+								@endif
 								</div>
 							</div>
 						</div>
 					</div>
-				</form>
 			</div>
 		</div>
+		
 		<!-- END fh5co-contact -->
 		
 		<div class="container" id="donate">
