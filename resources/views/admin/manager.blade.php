@@ -113,7 +113,11 @@
             @if ($editing === "true")
             <td>
             <button type="submit">Update</button>
+<<<<<<< .merge_file_I2fpK7
             </form>
+=======
+    </form>
+>>>>>>> .merge_file_uRpUST
             </td>
             <td>
                 <form action="{{ route('deleteData', ['db' => $db_table, 'id' => $row->id]) }}" method="POST">
