@@ -113,7 +113,7 @@
             @if ($editing === "true")
             <td>
             <button type="submit">Update</button>
-    <       /form>
+    </form>
             </td>
             <td>
                 <form action="{{ route('deleteData', ['db' => $db_table, 'id' => $row->id]) }}" method="POST">
