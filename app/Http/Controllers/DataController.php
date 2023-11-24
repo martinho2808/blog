@@ -15,7 +15,6 @@ class DataController extends Controller
     {
         /* Data validation */
         $request->validate([
-            'user_name' =>'required',
             'fname' => 'required|max:10|regex:/^[a-zA-Z\s]+$/',
             'lname' => 'required|max:10|regex:/^[a-zA-Z\s]+$/',
             'event_name' => [
