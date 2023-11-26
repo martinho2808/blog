@@ -15,6 +15,7 @@ class DataController extends Controller
     {
         /* Data validation */
         $request->validate([
+            'name' =>'required',
             'fname' => 'required|max:10|regex:/^[a-zA-Z\s]+$/',
             'lname' => 'required|max:10|regex:/^[a-zA-Z\s]+$/',
             'event_name' => [
@@ -27,6 +28,7 @@ class DataController extends Controller
         ]);
         /* call model and set data insert to table */
         $eventRegister = new Eventreg();
+        $eventRegister->name = $request->input('name');
         $eventRegister->fname = $request->input('fname');
         $eventRegister->lname = $request->input('lname');
         $eventRegister->event_name = $request->input('event_name');

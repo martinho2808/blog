@@ -27,6 +27,12 @@ return new class extends Migration
             ['event_id' => 'A004','event_name' => 'Event 4', 'location' => 'Location 4', 'price' => 3000],
             ['event_id' => 'A005','event_name' => 'Event 5', 'location' => 'Location 5', 'price' => 4000],
             ['event_id' => 'A006','event_name' => 'Event 6', 'location' => 'Location 6', 'price' => 5500],
+            ['event_id' => 'A007','event_name' => 'Event 7', 'location' => 'Location 7', 'price' => 1000],
+            ['event_id' => 'A008','event_name' => 'Event 8', 'location' => 'Location 8', 'price' => 2000],
+            ['event_id' => 'A009','event_name' => 'Event 9', 'location' => 'Location 9', 'price' => 1500],
+            ['event_id' => 'A0010','event_name' => 'Event 10', 'location' => 'Location 10', 'price' => 3000],
+            ['event_id' => 'A0011','event_name' => 'Event 11', 'location' => 'Location 11', 'price' => 4000],
+            ['event_id' => 'A0012','event_name' => 'Event 12', 'location' => 'Location 12', 'price' => 5500],
         ]);
     }
     /**

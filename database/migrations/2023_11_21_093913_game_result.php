@@ -19,8 +19,17 @@ return new class extends Migration
             $table->string('mode');
             $table->timestamps();
         });
+        DB::table('game_result')->insert([
+            'user_name' => 'John',
+            'moves' => '27',
+            'time' => '15:42',
+            'mode' => 'Medium',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 
+    
     /**
      * Reverse the migrations.
      */

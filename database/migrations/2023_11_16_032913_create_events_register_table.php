@@ -15,6 +15,7 @@ class CreateEventsRegisterTable extends Migration
     {
         Schema::create('events_register', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('fname', 10);
             $table->string('lname', 10);
             $table->string('event_name');
