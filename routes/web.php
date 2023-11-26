@@ -26,10 +26,7 @@ Route::get('/a', function () {
 });
 
 //Admin page
-//Route::get('/dashboard', function () {
-    //return view('dashboard');
-//})->middleware(['auth', 'verified','admin'])->name('dashboard');
-Route::get('/admin/manager',  [DbController::class, 'db_display'])->name('db_display');
+Route::get('/admin/manager',  [DbController::class, 'db_display'])->middleware(['auth', 'verified','admin'])->name('db_display');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
