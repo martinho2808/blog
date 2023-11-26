@@ -39,6 +39,10 @@
     <form method="POST" action="{{ route('event_submit') }}">
     @csrf
     <table>
+    <tr>
+            <td><label for="name">User Name:</label></td>
+            <td><input type="text" id="name" name="name" placeholder="Please enter your User Name"></td>
+        </tr>
         <tr>
             <td><label for="fname">Frist Name:</label></td>
             <td><input type="text" id="fname" name="fname" placeholder="Please enter your First Name"></td>
