@@ -19,8 +19,9 @@ Run the below script to start the project
 5. npm run dev
 6. php artisan serve
 
-
-
+## File Link
+Document: https://drive.google.com/drive/u/0/folders/15zDxRMLL-Ymvuw_KVEDgU9_hZjVYjorY
+Project Link: https://github.com/martinho2808/blog
 
 ## Contributing
 
