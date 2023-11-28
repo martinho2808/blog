@@ -11,6 +11,9 @@ Please install node.js, laravel and mysql
 
 After clone the project 
 
+1. Please create the database name 'laravel'
+2. Change the name of .env.example file to .env
+
 Run the below script to start the project
 1. npm install
 2. composer req doctrine/dbal
@@ -18,6 +21,8 @@ Run the below script to start the project
 4. php artisan migrate
 5. npm run dev
 6. php artisan serve
+
+***If see the error when open the brower, please click the right top corner site to generate the App Key
 
 ## File Link
 Document: https://drive.google.com/drive/u/0/folders/15zDxRMLL-Ymvuw_KVEDgU9_hZjVYjorY
